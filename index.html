@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="discription" content="A chatroom for multiuser chat created using node js and server socket">
+    <meta name="keywords" content="live chat,chatroom,chat,real time chat,chatroom">
+    <title>Chat System</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="title">
+                <img src="icons/chat_icon.png" alt="chat icon" width="50px">
+                <h1>Chat System</h1>
+            </div>
+            <button type="button" onclick="show_hide()">
+                <img src="icons/hamburger.png" width="50px">
+            </button>
+        </header>
+
+        <div class="container">
+            <div class="users-window">
+                <div class="users-head">
+                    <h3>People</h3>
+                    <h4 class="users-count">3</h4>
+                </div>
+                <div class="users-list">
+                    <!-- for name of users in the chat -->
+                </div>
+
+            </div>
+            <div class="chat-window">
+                <div class="chats">
+                    <!-- incomming and outgoing messages -->
+                </div>
+                <div class="user-input">
+                    <input id="user-msg" type="text" placeholder="type your messages ..">
+                    <button id="user-send" type="button">Send</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var uwindow=document.querySelector('.users-window');
+        function show_hide(){
+            if(uwindow.style.display=="block"){
+                uwindow.style.display = "none";
+            }
+            else{
+                uwindow.style.display = "block";
+            }
+        }
+    </script>
+
+    <script src="/socket.io/socket.io.js"> </script>
+    <script src="/js/client.js"></script>
+</body>
+</html>
